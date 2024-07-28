@@ -1,1 +1,1 @@
-## The Odin Project- Javascript Path
+## The Odin Project - Javascript Path
