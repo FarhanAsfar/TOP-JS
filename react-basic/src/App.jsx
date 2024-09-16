@@ -7,18 +7,27 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0);
 
-  function onClickHandler(){
-    setCount(count+1);
-    //console.log(state.count); 
-  }
+  
 
   return (
     <div>
-      <button onClick={onClickHandler}>
-        Counter {count}
-      </button>
+      {/* component name must Start with an Uppercase letter */}
+      <CustomButton count={count} setCount={setCount}></CustomButton>
     </div>
   )
+}
+
+//component
+function CustomButton(props){
+  
+  function onClickHandler(){
+    props.setCount(props.count+1);
+    //console.log(state.count); 
+  }
+  
+  return <button onClick={onClickHandler}>
+    Counter {props.count}
+  </button>
 }
 
 export default App
