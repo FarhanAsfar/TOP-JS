@@ -3,22 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-let state = {
-  count: 0
-}
 
 function App() {
-  //const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   function onClickHandler(){
-    state.count++;
-    console.log(state.count);
+    setCount(count+1);
+    //console.log(state.count); 
   }
 
   return (
     <div>
       <button onClick={onClickHandler}>
-        Counter {state.count}
+        Counter {count}
       </button>
     </div>
   )
