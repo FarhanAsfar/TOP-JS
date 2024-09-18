@@ -19,26 +19,40 @@ app.post("/todo", async(req,res)=>{
     }
     await todo.create({
         title: createPayload.title,
-        description: createPayload.description
+        description: createPayload.description,
+        completed: false
     })
     res.json({
         message: "Todo added"
     })
 })
 
-app.get("/todos", (req, res)=>{
+app.get("/todos", async(req, res)=>{
+    const todos = await todo.find();
 
+    res.json({
+        todos
+    })
 })
 
-app.put("/completed", (req, res)=>{
+app.put("/completed", async(req, res)=>{
     const updatePayload = req.body;
     const parsedPayload = updateTodo.safeParse(updatePayload);
     if(!parsedPayload.success){
         res.status(411).json({
             message: "Invalid inputs",
         });
+        return;
     }
-    return;
+
+    await todo.update({
+        _id: req.body.id,
+    }, {
+        completed: true
+    })
+    res.json({
+        message: "Marked as completed"
+    })
 })
 
 app.listen(Port, ()=>{
