@@ -1,21 +1,29 @@
 const express = require("express");
 const app = express();
 const { createTodo, updateTodo} = require("./types");
+const { todo } = require("./db");
 
 const Port = 3000;
 
 
 app.use(express.json());
 
-app.post("/todo", (req,res)=>{
+app.post("/todo", async(req,res)=>{
     const createPayload = req.body;
     const parsedPayload = createTodo.safeParse(createPayload);
     if(!parsedPayload.success){
         res.status(411).json({
             message: "Invalid inputs",
         });
+        return;
     }
-    return;
+    await todo.create({
+        title: createPayload.title,
+        description: createPayload.description
+    })
+    res.json({
+        message: "Todo added"
+    })
 })
 
 app.get("/todos", (req, res)=>{
