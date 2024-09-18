@@ -1,4 +1,4 @@
-#Todo App#
+## Todo App
 
 - Anyone can create a todo
 - Anyone can see their existing todos
