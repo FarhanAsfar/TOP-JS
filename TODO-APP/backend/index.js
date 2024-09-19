@@ -10,7 +10,10 @@ app.use(express.json());
 
 app.post("/todo", async(req,res)=>{
     const createPayload = req.body;
+    //console.log(createPayload);
     const parsedPayload = createTodo.safeParse(createPayload);
+    //console.log(parsedPayload);
+
     if(!parsedPayload.success){
         res.status(411).json({
             message: "Invalid inputs",
@@ -35,24 +38,40 @@ app.get("/todos", async(req, res)=>{
     })
 })
 
-app.put("/completed", async(req, res)=>{
-    const updatePayload = req.body;
-    const parsedPayload = updateTodo.safeParse(updatePayload);
-    if(!parsedPayload.success){
-        res.status(411).json({
-            message: "Invalid inputs",
-        });
-        return;
-    }
+app.put("/completed/:id", async(req, res)=>{
+    //we dont need to get the body as we are just updating the task status, completed or not. 
+    
+    // const updatePayload = req.body;
+    // console.log(updatePayload);
+    // const parsedPayload = updateTodo.safeParse(updatePayload);
+    // console.log(parsedPayload);
 
-    await todo.update({
-        _id: req.body.id,
-    }, {
-        completed: true
-    })
-    res.json({
-        message: "Marked as completed"
-    })
+    // // const id = req.params.id;
+    // // console.log(id);
+
+    // if(!parsedPayload.success){
+    //     res.status(411).json({
+    //         message: "Invalid inputs",
+    //     });
+    //     return;
+    // }
+
+    try{
+
+        await todo.updateOne({
+            _id: req.params.id,
+        }, {$set:
+            {completed: true}
+        })
+        res.json({
+            message: "Marked as completed"
+        })
+    }catch(error){
+        res.json({
+            message: error
+        })
+        console.log(error);
+    }
 })
 
 app.listen(Port, ()=>{
