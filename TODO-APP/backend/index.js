@@ -38,24 +38,43 @@ app.get("/todos", async(req, res)=>{
     })
 })
 
+app.patch("/updateTask/:id", async(req, res)=> {
+    const updatePayload = req.body;
+    console.log(updatePayload);
+    const parsedPayload = updateTodo.safeParse(updatePayload);
+    console.log(parsedPayload);
+
+    // const id = req.params.id;
+    // console.log(id);
+
+    if(!parsedPayload.success){
+        res.status(411).json({
+            message: "Invalid inputs",
+        });
+        return;
+    }
+    try{
+
+        await todo.updateOne({
+            _id: req.params.id,
+        }, {$set:
+            {title: updatePayload.title,
+                description: updatePayload.description
+            }
+        })
+        res.json({
+            message: "Todo updated"
+        })
+    }catch(error){
+        res.json({
+            message: error
+        })
+        console.log(error);
+    }
+})
+
 app.put("/completed/:id", async(req, res)=>{
     //we dont need to get the body as we are just updating the task status, completed or not. 
-    
-    // const updatePayload = req.body;
-    // console.log(updatePayload);
-    // const parsedPayload = updateTodo.safeParse(updatePayload);
-    // console.log(parsedPayload);
-
-    // // const id = req.params.id;
-    // // console.log(id);
-
-    // if(!parsedPayload.success){
-    //     res.status(411).json({
-    //         message: "Invalid inputs",
-    //     });
-    //     return;
-    // }
-
     try{
 
         await todo.updateOne({
