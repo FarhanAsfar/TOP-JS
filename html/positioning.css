@@ -1,12 +1,14 @@
 .parent {
     position: relative;
+    height: 200vh;
 }
 .child-one {
-    
+    /* position: absolute;
+    position: fixed; */
+    position: absolute
+    top: 0;
 }
 .child-two {
-    
 }
 .child-three {
-    
 }
