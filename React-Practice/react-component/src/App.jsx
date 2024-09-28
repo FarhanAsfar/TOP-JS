@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import NewButton from './Button'
+import Hello from './Test'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
     <div>
       <h1>Hello Worldd!</h1>
       <NewButton />
+      <Hello />
     </div>
   )
 }
