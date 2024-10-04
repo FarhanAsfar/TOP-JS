@@ -5,7 +5,7 @@ const { todo } = require("./db");
 const cors = require("cors");
 const Port = 3000;
 
-
+app.use(cors());
 app.use(express.json());
 
 app.post("/todo", async(req,res)=>{
