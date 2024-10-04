@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import './App.css'
 import AppName from './components/AppName'
 import AddTodo from './components/AddTodo'
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <center class = 'todo-container'>
+    <center className = 'todo-container'>
       <AppName />
       <AddTodo />
     </center>
   )
 }
 
-export default App
+export default App;
