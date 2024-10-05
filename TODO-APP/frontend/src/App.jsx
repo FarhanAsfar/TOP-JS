@@ -11,7 +11,7 @@ function App() {
     const json = await res.json();
     setTodos(json.todos);
   })
-  
+
   return (
     <div>
       <CreateTodo />
