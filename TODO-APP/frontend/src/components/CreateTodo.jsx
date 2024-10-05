@@ -1,23 +1,29 @@
+import { useState } from "react";
+
 export function CreateTodo(){
-    const [title, setTitle] = userState("");
-    const [description, setDescription] = userState("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
     return <div>
         <input id="title" type="text" placeholder="title" onChange={function(e){
             const value = e.target.value;
-            setTitle.target.value;
+            setTitle(e.target.value);
         }}/> <br /> <br />
 
         <input id="desc" type="text" placeholder="description" onChange={function(e){
             const value = e.target.value;
-            setDescription.target.value;
+            setDescription(e.target.value);
         }} /> <br /> <br />
 
         <button onClick={() => {
-            fetch("http://localhost:3000/todos", {
+            fetch("http://localhost:3000/todo", {
                 method: "POST",
-                body: {
-                    title:  
+                body: JSON.stringify({
+                    title: title,
+                    description: description
+                }),
+                headers: {
+                    "content-type": "application/json"
                 }
             })
             .then(async function(res){
