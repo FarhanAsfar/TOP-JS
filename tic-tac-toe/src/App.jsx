@@ -1,29 +1,28 @@
-import { useState } from 'react'
-import './App.css'
+function Square(){
+  return <button className='square'>1</button>;
+}
 
-function App() {
-
+export default function Board() {
   return (
-    <>
+    <div>
       <div className='board-row'>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
+        <Square />
+        <Square />
+        <Square />
       </div>
 
       <div className='board-row'>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
+        <Square />
+        <Square />
+        <Square />
       </div>
 
       <div className='board-row'>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
-        <button className='square'>X</button>
+        <Square />
+        <Square />
+        <Square />
       </div>
-    </>
+    </div>
   )
 }
 
-export default App

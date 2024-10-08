@@ -1,5 +1,5 @@
 function Board(){
-    <div>
+    return <div>
         <div className='board-row'>
         <button className='square'>X</button>
         <button className='square'>X</button>
@@ -20,4 +20,4 @@ function Board(){
     </div>
 }
 
-export default Board;
+//export default Board;
