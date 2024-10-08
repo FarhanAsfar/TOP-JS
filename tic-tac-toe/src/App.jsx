@@ -10,7 +10,8 @@ function Square(){
   return (
     <button className='square' onClick={handleClick}>
       {value}
-    </button>);
+    </button>
+  );
 }
 
 export default function Board() {
