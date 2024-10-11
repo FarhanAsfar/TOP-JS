@@ -27,9 +27,9 @@ export default function Board() {
       </div>
 
       <div className='board-row'>
-        <Square value={squares[3]} />
-        <Square value={squares[4]} />
-        <Square value={squares[5]} />
+        <Square value={squares[3]} onSquareClick={ () => handleClick(0)} />
+        <Square value={squares[4]} onSquareClick={ () => handleClick(0)} />
+        <Square value={squares[5]} onSquareClick={ () => handleClick(0)} />
       </div>
 
       <div className='board-row'>
