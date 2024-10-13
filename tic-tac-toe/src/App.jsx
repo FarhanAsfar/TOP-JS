@@ -33,10 +33,8 @@ export default function Board() {
   let status;
   if(winner){
     status = "Winner: "+winner;
-  }else{
-    status = "Looser: "+ (xIsNext ? "X" : "O");
   }
-
+  
   return (
     <>
       <div className='status'>{status}</div>
