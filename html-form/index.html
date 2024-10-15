@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <label for="first-name">First Name:</label>
+      <input
+        type="text"
+        placeholder="first-name"
+        id="first-name"
+        name="first-name"
+      />
+      <br /><br />
+      <label for="last-name">Last Name:</label>
+      <input
+        type="text"
+        placeholder="last-name"
+        id="last-name"
+        name="last-name"
+      />
+
+      <button type="button" onclick="showName()">Greet</button>
+    </form>
+  </body>
+  <script>
+    function showName() {
+      const name = document.getElementById("first-name").value;
+      const container = document.createElement("div");
+      const div = document.createElement("div");
+      div.innerHTML = name;
+
+      container.appendChild(div);
+    }
+  </script>
+</html>
