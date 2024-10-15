@@ -47,6 +47,70 @@
 
       <label for="amount">Amount: </label>
       <input type="number" id="amount" name="amount" placeholder="amount">
+      <br><br>
+
+      <label for="dob">Date of Birth: </label>
+      <input type="date" placeholder="dob" id="dob" name="dob">
+      <br><br>
+
+      <textarea name="comment" id="comment" placeholder="comment" rows="5" cols="60"></textarea>
+      <br><br>
+
+      <label for="car">Select a car:</label>
+      <select name="car" id="car">
+        <option value="Honda">Honda Insight</option>
+        <option value="Toyota" selected>Toyota</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="ford">Ford</option>
+      </select>
+      <br><br>
+
+      <label for="fashion">Choose:</label>
+      <select name="fashion" id="fashion">
+        <optgroup label="Clothing">
+          <option value="t_shirt">T-Shirts</option>
+          <option value="sweater">Sweaters</option>
+          <option value="coats">Coats</option>
+        </optgroup>
+        <optgroup label="Foot Wear">
+          <option value="sneakers">Sneakers</option>
+          <option value="boots">Boots</option>
+          <option value="sandals">Sandals</option>
+        </optgroup>
+      </select>
+
+      <h1>Ticket Type</h1>
+      <div>
+        <input type="radio" id="child" name="ticket_type" value="child">
+        <label for="child">Child</label>
+      </div>
+
+      <div>
+        <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+        <label for="adult">Adult</label>
+      </div>
+
+      <div>
+        <input type="radio" id="senior" name="ticket_type" value="senior">
+        <label for="senior">Senior</label>
+      </div>
+
+
+      <h1>Pizza Toppings</h1>
+
+      <div>
+        <input type="checkbox" id="sausage" name="topping" value="sausage" checked>
+        <label for="sausage">Sausage</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="onions" name="topping" value="onions">
+        <label for="onions">Onions</label>
+      </div>
+      <br><br>
+      
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
 
     </form>
 
