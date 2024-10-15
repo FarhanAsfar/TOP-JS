@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
   </head>
+  <script>
+    function showName() {
+      const first_name = document.getElementById("first-name").value;
+      const last_name = document.getElementById("last-name").value;
+
+      const text = document.createElement("div");
+      text.innerHTML = "Hello "+ first_name +" "+ last_name;
+
+      document.body.appendChild(text);
+    }
+  </script>
   <body>
     <form action="" method="post">
       <label for="first-name">First Name:</label>
@@ -25,15 +36,8 @@
 
       <button type="button" onclick="showName()">Greet</button>
     </form>
-  </body>
-  <script>
-    function showName() {
-      const name = document.getElementById("first-name").value;
-      const container = document.createElement("div");
-      const div = document.createElement("div");
-      div.innerHTML = name;
 
-      container.appendChild(div);
-    }
-  </script>
+    <!-- <div id="show-text"></div> -->
+  </body>
+  
 </html>
