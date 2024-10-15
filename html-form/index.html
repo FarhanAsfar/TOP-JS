@@ -18,25 +18,29 @@
   </script>
   <body>
     <form action="" method="post">
-      <label for="first-name">First Name:</label>
-      <input
-        type="text"
-        placeholder="first-name"
-        id="first-name"
-        name="first-name"
-      />
-      <br /><br />
-      <label for="last-name">Last Name:</label>
-      <input
-        type="text"
-        placeholder="last-name"
-        id="last-name"
-        name="last-name"
-      />
 
-      <button type="button" onclick="showName()">Greet</button>
+      <fieldset>
+          <label for="first-name">First Name:</label>
+          <input
+            type="text"
+            placeholder="first-name"
+            id="first-name"
+            name="first-name"
+          />
+          <br /><br />
+          <label for="last-name">Last Name:</label>
+          <input
+            type="text"
+            placeholder="last-name"
+            id="last-name"
+            name="last-name"
+          />
+        
+          <button type="button" onclick="showName()">Greet</button>
+      </fieldset>
       <br> <br>
 
+    <fieldset>  
       <label for="user-email">Email: </label>
       <input type="email" placeholder="abc@gmail.com" id="user-email" name="user-email">
       <br><br>
@@ -52,7 +56,8 @@
       <label for="dob">Date of Birth: </label>
       <input type="date" placeholder="dob" id="dob" name="dob">
       <br><br>
-
+    </fieldset>
+    
       <textarea name="comment" id="comment" placeholder="comment" rows="5" cols="60"></textarea>
       <br><br>
 
