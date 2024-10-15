@@ -11,55 +11,73 @@
       const last_name = document.getElementById("last-name").value;
 
       const text = document.createElement("div");
-      text.innerHTML = "Hello "+ first_name +" "+ last_name;
+      text.innerHTML = "Hello " + first_name + " " + last_name;
 
       document.body.appendChild(text);
     }
   </script>
   <body>
     <form action="" method="post">
+      <fieldset>
+        <legend>User Name</legend>
+        <label for="first-name">First Name:</label>
+        <input
+          type="text"
+          placeholder="first-name"
+          id="first-name"
+          name="first-name"
+        />
+        <br /><br />
+        <label for="last-name">Last Name:</label>
+        <input
+          type="text"
+          placeholder="last-name"
+          id="last-name"
+          name="last-name"
+        />
+
+        <button type="button" onclick="showName()">Greet</button>
+      </fieldset>
+      <br />
+      <br />
 
       <fieldset>
-          <label for="first-name">First Name:</label>
-          <input
-            type="text"
-            placeholder="first-name"
-            id="first-name"
-            name="first-name"
-          />
-          <br /><br />
-          <label for="last-name">Last Name:</label>
-          <input
-            type="text"
-            placeholder="last-name"
-            id="last-name"
-            name="last-name"
-          />
-        
-          <button type="button" onclick="showName()">Greet</button>
+        <legend>Contact Details</legend>
+        <label for="user-email">Email: </label>
+        <input
+          type="email"
+          placeholder="abc@gmail.com"
+          id="user-email"
+          name="user-email"
+        />
+        <br /><br />
+
+        <label for="user-password">Password: </label>
+        <input
+          type="password"
+          placeholder="password"
+          id="user-password"
+          name="user-password"
+        />
+        <br /><br />
+
+        <label for="amount">Amount: </label>
+        <input type="number" id="amount" name="amount" placeholder="amount" />
+        <br /><br />
+
+        <label for="dob">Date of Birth: </label>
+        <input type="date" placeholder="dob" id="dob" name="dob" />
+        <br /><br />
       </fieldset>
-      <br> <br>
 
-    <fieldset>  
-      <label for="user-email">Email: </label>
-      <input type="email" placeholder="abc@gmail.com" id="user-email" name="user-email">
-      <br><br>
-
-      <label for="user-password">Password: </label>      
-      <input type="password" placeholder="password" id="user-password" name="user-password">
-      <br><br>
-
-      <label for="amount">Amount: </label>
-      <input type="number" id="amount" name="amount" placeholder="amount">
-      <br><br>
-
-      <label for="dob">Date of Birth: </label>
-      <input type="date" placeholder="dob" id="dob" name="dob">
-      <br><br>
-    </fieldset>
-    
-      <textarea name="comment" id="comment" placeholder="comment" rows="5" cols="60"></textarea>
-      <br><br>
+      <textarea
+        name="comment"
+        id="comment"
+        placeholder="comment"
+        rows="5"
+        cols="60"
+      ></textarea>
+      <br /><br />
 
       <label for="car">Select a car:</label>
       <select name="car" id="car">
@@ -68,7 +86,7 @@
         <option value="mercedes">Mercedes</option>
         <option value="ford">Ford</option>
       </select>
-      <br><br>
+      <br /><br />
 
       <label for="fashion">Choose:</label>
       <select name="fashion" id="fashion">
@@ -86,40 +104,47 @@
 
       <h1>Ticket Type</h1>
       <div>
-        <input type="radio" id="child" name="ticket_type" value="child">
+        <input type="radio" id="child" name="ticket_type" value="child" />
         <label for="child">Child</label>
       </div>
 
       <div>
-        <input type="radio" id="adult" name="ticket_type" value="adult" checked>
+        <input
+          type="radio"
+          id="adult"
+          name="ticket_type"
+          value="adult"
+          checked
+        />
         <label for="adult">Adult</label>
       </div>
 
       <div>
-        <input type="radio" id="senior" name="ticket_type" value="senior">
+        <input type="radio" id="senior" name="ticket_type" value="senior" />
         <label for="senior">Senior</label>
       </div>
-
 
       <h1>Pizza Toppings</h1>
 
       <div>
-        <input type="checkbox" id="sausage" name="topping" value="sausage" checked>
+        <input
+          type="checkbox"
+          id="sausage"
+          name="topping"
+          value="sausage"
+          checked
+        />
         <label for="sausage">Sausage</label>
       </div>
 
       <div>
-        <input type="checkbox" id="onions" name="topping" value="onions">
+        <input type="checkbox" id="onions" name="topping" value="onions" />
         <label for="onions">Onions</label>
       </div>
-      <br><br>
-      
+      <br /><br />
+
       <button type="submit">Submit</button>
       <button type="reset">Reset</button>
-
     </form>
-
-    
   </body>
-  
 </html>
