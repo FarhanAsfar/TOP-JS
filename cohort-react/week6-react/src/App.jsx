@@ -1,34 +1,38 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(){
+  const [title, setTitle] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header title={title}></Header>
+      <Header title="hello 2"></Header>
+      <Header title="hello 3"></Header>
+      <Header title="hello 4"></Header>
+      <Header title="hello 5"></Header>
+      <Header title="hello 6"></Header>
+
+      <Button setTitle={setTitle}></Button>
     </>
+  );
+
+}
+
+function Header({title}){
+  return(
+    <div>
+      {title}
+    </div>
+  );
+}
+
+function Button({setTitle}){
+  function updateTitle(){
+    setTitle("my name is "+ Math.random());
+  }
+  
+  return (
+    <button onClick={updateTitle}>Click me!</button>
   )
 }
 
