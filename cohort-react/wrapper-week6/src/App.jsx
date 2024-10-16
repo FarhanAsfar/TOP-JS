@@ -4,23 +4,18 @@ function App() {
 
   return (
     <div>
-      <CardWrapper innerComponent={<TextComponent />}></CardWrapper>
+      <CardWrapper>
+        hello
+      </CardWrapper>
     </div>
   )
 }
 
-function TextComponent(){
-  return (
-    <div>
-      hello
-    </div>
-  )
-}
 
-function CardWrapper({innerComponent}){
+function CardWrapper({children}){
   return(
     <div style={{border: "2px solid cyan"}}>
-      {innerComponent}
+      {children}
     </div>
   );
 }
