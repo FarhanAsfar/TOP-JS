@@ -1,37 +1,35 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+// import { memo } from 'react';
 
 function App(){
-
-  return (
-    <>
-      <HeaderWithButton></HeaderWithButton>
-      <Header title="Not Rerendering"></Header>
-    </>
-  );
-
-}
-
-function HeaderWithButton(){
   const [title, setTitle] = useState(0);
 
   function updateTitle(){
     setTitle("my name is "+ Math.random());
   }
 
-  return(
+  return (
     <div>
-      <button onClick={updateTitle}>Click me!</button>
+    <button onClick={updateTitle}>Click me!</button>
       <Header title={title}></Header>
+      <Header title="hello 2"></Header>
+      <Header title="hello 3"></Header>
+      <Header title="hello 4"></Header>
+      <Header title={title}></Header>
+      <Header title="hello 6"></Header>
+
+      
     </div>
   );
+
 }
 
-function Header({title}){  
-  return (
+const Header = React.memo(function Header({title}){
+  return(
     <div>
       {title}
     </div>
-  )
-}
+  );
+})
 
 export default App
