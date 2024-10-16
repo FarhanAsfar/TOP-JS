@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+let counter = 4;
 
 function App() {
   const [todos, setTodos] = useState([{
@@ -22,7 +21,7 @@ function App() {
 
   function addTodo(){
     setTodos([...todos, {
-      id:4,
+      id:counter++,
       title: Math.random(),
       description: "nothing"
     }])
@@ -31,7 +30,8 @@ function App() {
   return (
     <div>
       <button onClick={addTodo}>Add</button>
-      {todos.map(todo => <Todo title={todo.title} description={todo.description}/>)}
+
+      {todos.map(todo => <Todo key={todo.id} title={todo.title} description={todo.description}/>)}
     </div>
   )
 }
