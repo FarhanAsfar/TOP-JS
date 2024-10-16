@@ -6,23 +6,22 @@ function App() {
     <div>
       <CardWrapper>
         <CardWrapper>
-          hello
-          {/* <TextComponent /> */}
+          <TextComponent />
         </CardWrapper>
       </CardWrapper>
     </div>
   )
 }
 
-// function TextComponent(){
-//   return <div>
-//     hello from text component
-//   </div>
-// }
+function TextComponent(){
+  return <div>
+    hello from text component
+  </div>
+}
 
 function CardWrapper({children}){
   return(
-    <div style={{border: "2px solid cyan", padding:"15px"}}>
+    <div style={{border: "2px solid cyan", padding:15, margin:20}}>
       {children}
     </div>
   );
