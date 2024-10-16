@@ -1,38 +1,36 @@
 import { useState } from 'react'
 
 function App(){
-  const [title, setTitle] = useState(0);
 
   return (
     <>
-      <Header title={title}></Header>
-      <Header title="hello 2"></Header>
-      <Header title="hello 3"></Header>
-      <Header title="hello 4"></Header>
-      <Header title="hello 5"></Header>
-      <Header title="hello 6"></Header>
-
-      <Button setTitle={setTitle}></Button>
+      <HeaderWithButton></HeaderWithButton>
+      <Header title="Not Rerendering"></Header>
     </>
   );
 
 }
 
-function Header({title}){
+function HeaderWithButton(){
+  const [title, setTitle] = useState(0);
+
+  function updateTitle(){
+    setTitle("my name is "+ Math.random());
+  }
+
   return(
     <div>
-      {title}
+      <button onClick={updateTitle}>Click me!</button>
+      <Header title={title}></Header>
     </div>
   );
 }
 
-function Button({setTitle}){
-  function updateTitle(){
-    setTitle("my name is "+ Math.random());
-  }
-  
+function Header({title}){  
   return (
-    <button onClick={updateTitle}>Click me!</button>
+    <div>
+      {title}
+    </div>
   )
 }
 
