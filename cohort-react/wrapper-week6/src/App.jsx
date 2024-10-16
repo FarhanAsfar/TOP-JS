@@ -5,16 +5,24 @@ function App() {
   return (
     <div>
       <CardWrapper>
-        hello
+        <CardWrapper>
+          hello
+          {/* <TextComponent /> */}
+        </CardWrapper>
       </CardWrapper>
     </div>
   )
 }
 
+// function TextComponent(){
+//   return <div>
+//     hello from text component
+//   </div>
+// }
 
 function CardWrapper({children}){
   return(
-    <div style={{border: "2px solid cyan"}}>
+    <div style={{border: "2px solid cyan", padding:"15px"}}>
       {children}
     </div>
   );
