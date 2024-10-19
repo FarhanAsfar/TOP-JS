@@ -7,14 +7,15 @@ const [todos, setTodos] = useState([]);
     fetch("http://localhost:3000/todos")
     .then(async (res)=>{
       const json = await res.json();
-      setTodos(json);
+      console.log(json);
+      setTodos(json.data);
     })
   }, []);
 
 
   return (
     <div>
-      
+      {todos.map(todo => <Todo key={todo._id} title={todo.title} description={todo.description}></Todo>)}
     </div>
   )
 }
@@ -22,7 +23,7 @@ const [todos, setTodos] = useState([]);
 function Todo({title, description}){
   return (
     <div>
-      <h1>{title}</h1>
+      <h1><i>{title}</i></h1>
       <h3>{description}</h3>
     </div>
   )
