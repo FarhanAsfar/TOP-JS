@@ -1,28 +1,32 @@
+import { useEffect, useState } from "react"
+
 function App() {
+const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/todos")
+    .then(async (res)=>{
+      const json = await res.json();
+      setTodos(json);
+    })
+  }, []);
+
 
   return (
     <div>
-      <CardWrapper>
-        <CardWrapper>
-          <TextComponent />
-        </CardWrapper>
-      </CardWrapper>
+      
     </div>
   )
 }
 
-function TextComponent(){
-  return <div>
-    hello from text component
-  </div>
+function Todo({title, description}){
+  return (
+    <div>
+      <h1>{title}</h1>
+      <h3>{description}</h3>
+    </div>
+  )
 }
 
-function CardWrapper({children}){
-  return(
-    <div style={{border: "2px solid cyan", padding:15, margin:20}}>
-      {children}
-    </div>
-  );
-}
 
 export default App
