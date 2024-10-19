@@ -9,9 +9,9 @@ function App() {
       <h2>No extra div, using fragment</h2>
       <h1>Fruit List</h1>
 
-      <ul class="list-group">
+      <ul className="list-group">
         {fruits.map(item => (
-          <li class="list-group-item">{item}</li>
+          <li className="list-group-item">{item}</li>
         ))}
       </ul>
     </>
