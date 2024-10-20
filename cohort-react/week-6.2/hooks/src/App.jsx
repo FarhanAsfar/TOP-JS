@@ -2,21 +2,27 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 
 function App() {
-  const [todos, setTodos] = useState(0)
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000")
-    .then(async (res) => {
-      const json = await res.json();
-      setTodos(json.data);
-    });
+    try{
+      fetch("http://localhost:3000/todos")
+      .then(async (res) => {
+        const json = await res.json();
+        //console.log(json);
+        setTodos(json.data);
+      })
+    }
+    catch(error){
+      console.log(error);
+    }
   }, []);
 
   return (
     <div>
       {todos.map(todo => <Todo key={todo._id} title={todo.title} description={todo.description} />)}
     </div>
-  )
+  );
 }
 
 function Todo({title, description}){
@@ -25,7 +31,7 @@ function Todo({title, description}){
       <h1>{title}</h1>
       <h3>{description}</h3>
     </div>
-  )
+  );
 }
 
 export default App
