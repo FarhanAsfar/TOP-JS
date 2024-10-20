@@ -39,6 +39,13 @@
       border: 2px solid #999;
     }
 
+    input:invalid{
+        border-color: red;
+    }
+    input:valid{
+        border-color: green;
+    }
+
     input:focus,
     textarea:focus {
       /* Set the outline width and style */
@@ -65,7 +72,7 @@
       margin-left: 0.5em;
     }
   </style>
-  
+
   <body>
     <form action="">
       <label for="name">Name: </label>
