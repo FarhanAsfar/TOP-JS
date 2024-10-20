@@ -44,6 +44,7 @@ function Todo({id}){
   
   return(
     <div>
+      <h3>ID: {id}</h3>
       <h1>{todos.title}</h1>
       <h3>{todos.description}</h3>
     </div>
