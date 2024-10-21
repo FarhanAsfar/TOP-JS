@@ -36,7 +36,7 @@ function Input(){
   return (
     <div>
     <input type="number"  onChange={updateSum} />
-    <h4>Value: {inputValue}</h4>
+    <h4>Sum: {inputValue}</h4>
     </div>
   );
 }
