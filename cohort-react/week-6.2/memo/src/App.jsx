@@ -1,13 +1,12 @@
+import { useMemo } from 'react';
 import { useState } from 'react'
 
 function App() {
-  let [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
   function updateCount(){
-    count++;
-    setCount(count);
+    setCount(count+1);
   }
-
   return (
     <div>
       <Input></Input>
@@ -20,22 +19,31 @@ function App() {
 function Input(){
   const [inputValue, setInputValue] = useState('');
 
-  // const handleInputChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
-
-  function updateSum(event){
-    let value = event.target.value;
+  let count = useMemo(() => {
     let sum = 0;
-    for(let i=1;i<=value;i++){
+    console.log('loop')
+    for(let i=1;i<=inputValue;i++){
       sum += i;
     }
     setInputValue(sum);
-  }
+  }, [inputValue]);
+  
+  // function updateSum(event){
+  //   let value = event.target.value;
+  //   let sum = 0;
+  //   console.log('loop')
+  //   for(let i=1;i<=value;i++){
+  //     sum += i;
+  //   }
+  //   setInputValue(sum);
+  // }
 
   return (
     <div>
-    <input type="number"  onChange={updateSum} />
+    {/* <input type="number"  onChange={updateSum} /> */}
+    <input type="number" onChange={(event) =>{
+      setInputValue(event.target.value);
+    }} />
     <h4>Sum: {inputValue}</h4>
     </div>
   );
