@@ -21,11 +21,10 @@ function Input(){
 
   let count = useMemo(() => {
     let sum = 0;
-    console.log('loop')
     for(let i=1;i<=inputValue;i++){
       sum += i;
     }
-    setInputValue(sum);
+    return sum;
   }, [inputValue]);
   
   // function updateSum(event){
@@ -44,7 +43,7 @@ function Input(){
     <input type="number" onChange={(event) =>{
       setInputValue(event.target.value);
     }} />
-    <h4>Sum: {inputValue}</h4>
+    <h4>Sum: {count}</h4>
     </div>
   );
 }
