@@ -18,7 +18,7 @@ function App() {
 
 function Input(){
   const [inputValue, setInputValue] = useState('');
-
+  // console.log('memo')
   let count = useMemo(() => {
     let sum = 0;
     for(let i=1;i<=inputValue;i++){
