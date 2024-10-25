@@ -20,7 +20,6 @@ function useTodos(){
   }, []);
 }
 
-
 function App() {
   const todos = useTodos();
 
