@@ -1,0 +1,19 @@
+.right-container{
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.header{
+    background-color: blueviolet;
+    flex-basis: 130;
+}
+
+form{
+    background-color: pink;
+}
+
+.footer{
+    background-color: burlywood;
+}
