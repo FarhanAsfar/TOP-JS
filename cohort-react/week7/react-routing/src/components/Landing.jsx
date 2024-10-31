@@ -1,7 +1,7 @@
 export function Landing(){
     return (
         <div>
-            Landing Page
+            <h3>Landing Page</h3>
         </div>
     )
 }
