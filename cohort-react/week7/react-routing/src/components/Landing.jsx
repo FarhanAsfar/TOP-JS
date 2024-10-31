@@ -1,4 +1,4 @@
-export function Landin(){
+export function Landing(){
     return (
         <div>
             Landing Page
