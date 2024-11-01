@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { CountContext } from './component/context'
 
 
 function App() {
@@ -6,12 +7,14 @@ function App() {
 
   return (
     <div>
-      <Count count={count} setCount={setCount} />
+      <CountContext.Provider value={count}>
+        <Count count={count} setCount={setCount} />
+      </CountContext.Provider>
     </div>
   )
 }
 
-function Count({count, setCount}){
+function Count({setCount}){
   return (
     <div>
       <CountRenderer count={count} />
@@ -20,7 +23,7 @@ function Count({count, setCount}){
   )
 }
 
-function CountRenderer({count}){
+function CountRenderer(){
   return (
     <div>
       {count}
