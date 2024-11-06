@@ -25,10 +25,22 @@ function Count(){
 
 function CountRenderer(){
   const count = useRecoilValue(countAtom);
-
+  // console.log(count);
   return (
     <div>
       {count}
+
+      <p><IsEven /></p>
+    </div>
+  )
+}
+
+function IsEven(){
+  const count = useRecoilValue(countAtom);
+
+  return (
+    <div>
+      {(count % 2 == 0 ) ? "Even" : null}
     </div>
   )
 }
