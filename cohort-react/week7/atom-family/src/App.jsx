@@ -12,7 +12,7 @@ function App() {
   )
 }
 
-function Todo({id}){
+function Todo({}){
   return(
     <>
       {todo.title}
