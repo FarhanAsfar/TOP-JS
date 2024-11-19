@@ -12,8 +12,8 @@ function App() {
       {fruits.length===0 ? <h3>Empty List</h3>:null}
 
       <ul className="list-group">
-        {fruits.map(item => (
-          <li className="list-group-item">{item}</li>
+        {fruits.map((item, index) => (
+          <li key={index} className="list-group-item">{item}</li>
         ))}
       </ul>
     </>
