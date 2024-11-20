@@ -1,9 +1,9 @@
 
-const Item = (props) => {
+const Item = ({ foodItem }) => {
   return (
     <>
       <li className="list-group-item">
-        {props.foodItem}
+        {foodItem}
       </li>
     </>
   );

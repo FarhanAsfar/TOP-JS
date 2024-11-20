@@ -1,10 +1,9 @@
-const ErrorMsg = () => {
-  const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
+const ErrorMsg = ({ items }) => {
 
   return (
     <>
       <h1>Fruit List</h1>
-      {fruits.length === 0 ? <h3>Empty List</h3> : null}
+      {items.length === 0 ? <h3>Empty List</h3> : null}
     </>
   );
 };

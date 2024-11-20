@@ -1,12 +1,12 @@
 import Item from "./item";
 
-const FoodItems = () => {
-  const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
+const FoodItems = ({items}) => {
+//   const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
 
   return (
     <>
       <ul className="list-group">
-        {fruits.map((item, index) => (
+        {items.map((item, index) => (
           <Item key={index} foodItem={item}></Item>
         ))}
       </ul>

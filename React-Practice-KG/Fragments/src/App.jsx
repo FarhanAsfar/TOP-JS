@@ -4,15 +4,15 @@ import ErrorMsg from "./components/ErrorMsg";
 
 function App() {
   // const fruits = [];
-  // const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
+  const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
 
   return (
     <>
       <h2>No extra div, using fragment</h2>
 
-      <ErrorMsg></ErrorMsg>
+      <ErrorMsg items={fruits}></ErrorMsg>
 
-      <FoodItems></FoodItems>
+      <FoodItems items={fruits}></FoodItems>
     </>
   )
 }
