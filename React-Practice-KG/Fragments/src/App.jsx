@@ -4,7 +4,7 @@ import ErrorMsg from "./components/ErrorMsg";
 
 function App() {
   // const fruits = [];
-  const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry"];
+  const fruits = ["Apple", "Banana", "Grape", "Cherry", "Berry", "Wood Apple"];
 
   return (
     <>
