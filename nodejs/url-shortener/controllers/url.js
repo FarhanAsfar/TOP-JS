@@ -21,6 +21,39 @@ async function handleGenerateNewURL(req, res) {
     });
 }
 
+async function handleGetURL(req, res) {
+    try{
+        const shortId = req.params.shortId;
+        const entry = await URL.findOneAndUpdate(
+            {
+                shortId,
+            },
+            {
+                $push: {
+                    visitHistory: {
+                        timestamp: Date.now()
+                    }
+                },
+            }
+        );
+        res.redirect(entry.redirectURL);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+async function handleGetAnalytics(req, res) {
+    const shortId = req.params.shortId;
+    const result = await URL.findOne({shortId});
+
+    return res.json({
+        totalClicks: result.visitHistory.length,
+        analytics: result.visitHistory
+    });
+}
+
 module.exports = {
     handleGenerateNewURL,
+    handleGetURL,
+    handleGetAnalytics,
 }
