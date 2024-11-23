@@ -3,4 +3,6 @@ const router = express.Router();
 
 const {handleGenerateNewURL} = require('../controllers/url');
 
-router.post('/')
+router.post('/', handleGenerateNewURL);
+
+module.exports = router;
