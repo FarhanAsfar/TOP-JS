@@ -30,7 +30,7 @@ app.get('/test', async (req, res)=>{
 
 app.use('/url', urlRoute);
 
-app.get('/:shortId', urlRoute);
+app.get('/url/:shortId', urlRoute);
 
 app.get('/analytics/:shortId', urlRoute);
 
