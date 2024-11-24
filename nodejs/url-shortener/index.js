@@ -19,6 +19,7 @@ app.set('views', path.resolve("./views"));
 app.use('/', staticRoute);
 
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));//support form data
 
 app.get('/test', async (req, res)=>{
     const urls = await URL.find({});
