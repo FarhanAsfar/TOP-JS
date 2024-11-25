@@ -7,6 +7,9 @@ const { connectMongoDB } = require('./connection');
 const app = express();
 const PORT = 8000;
 
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));//support form data
+
 
 const urlRoute = require('./routes/url');
 const staticRoute = require('./routes/staticRouter');
@@ -22,9 +25,6 @@ app.set('views', path.resolve("./views"));
 
 app.use('/', staticRoute);
 app.use('/user', userRoute);
-
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));//support form data
 
 app.get('/test', async (req, res)=>{
     const urls = await URL.find({});
