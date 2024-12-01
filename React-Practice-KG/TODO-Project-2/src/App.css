@@ -5,3 +5,11 @@
     margin: 10px;
     margin-bottom: 20px;
 }
+
+input{
+    width: 100%;
+}
+
+.items-container{
+    text-align: left;
+}
