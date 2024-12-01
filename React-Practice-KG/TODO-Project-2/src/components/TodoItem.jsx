@@ -1,4 +1,7 @@
-function TodoItem({ todoName, todoDate }){
+import TodoItem from "./TodoItem"
+import styles from "./TodoItem.module.css"
+
+const TodoItems({ todoItems }) => {
     return (
         <div>
             <div className="col-6">{todoName}</div>
@@ -8,7 +11,7 @@ function TodoItem({ todoName, todoDate }){
                 <button type="button" className="btn">Delete</button>
             </div>
         </div>
-    )
+    );
 }
 
-export default TodoItem;
+export default TodoItems;
