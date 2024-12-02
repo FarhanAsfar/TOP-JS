@@ -3,7 +3,7 @@ import styles from "./TodoItem.module.css"
 
 const TodoItems({ todoItems }) => {
     return (
-        <div>
+        <div className={styles.itemsContainer}>
             <div className="col-6">{todoName}</div>
             <div className="col-4">{todoDate}</div>
 
