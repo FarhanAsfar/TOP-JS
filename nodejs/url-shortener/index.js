@@ -3,14 +3,16 @@ const cookieParser = require('cookie-parser');
 const URL = require('./models/url');
 const path = require('path');
 const { connectMongoDB } = require('./connection');
+const {restrictToLoggedinUser} = require("./middleware/auth");
 
 
 const app = express();
 const PORT = 8000;
 
+
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));//support form data
-
+app.use(cookieParser());
 
 const urlRoute = require('./routes/url');
 const staticRoute = require('./routes/staticRouter');
@@ -34,7 +36,7 @@ app.get('/test', async (req, res)=>{
     });
 })
 
-app.use('/url', urlRoute);
+app.use('/url', restrictToLoggedinUser, urlRoute);
 
 app.get('/url/:shortId', urlRoute);
 
