@@ -3,11 +3,18 @@ const jwt = require('jsonwebtoken');
 const secretKey = "secret";
 
 function setUser(user){
-    return jwt.sign(user, secretKey);
+    return jwt.sign({
+        _id: user._id,
+        email: user.email,
+    }, secretKey);
 }
 
-function getUser(toekn){
-    return jwt.verify(toekn, secretKey);
+function getUser(token){
+    try {
+        return jwt.verify(token, secretKey);
+    } catch (error) {
+        return null;
+    }
 }
 
 
