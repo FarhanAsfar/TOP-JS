@@ -1,57 +1,41 @@
 /* Planets.css */
 
-/* General styles for the planets container */
-.planets-container {
+/* Center the card on the page */
+.big-card-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light background for contrast */
+    margin: 0;
+    padding: 0;
   }
   
-  /* Style for each planet card */
-  .planet-card {
-    background-color: #f0f8ff; /* Default background color */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 12px 16px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+  /* Big card styling */
+  .big-card {
+    background-color: #4caf50; /* Green background */
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .big-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Title styling */
+  .big-card-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
     font-weight: bold;
-    color: #333;
-    min-width: 120px;
-  }
-  
-  /* Assign different background colors for specific planets */
-  .planet-card.earth {
-    background-color: #00ff00;
-  }
-  
-  .planet-card.mars {
-    background-color: #ff4500;
-  }
-  
-  .planet-card.mercury {
-    background-color: #d3d3d3;
-  }
-  
-  .planet-card.jupiter {
-    background-color: #ffd700;
-  }
-  
-  .planet-card.venus {
-    background-color: #ff69b4;
-  }
-  
-  .planet-card.uranus {
-    background-color: #afeeee;
-  }
-  
-  .planet-card.saturn {
-    background-color: #f5deb3;
-  }
-  
-  .planet-card.neptune {
-    background-color: #4169e1;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   

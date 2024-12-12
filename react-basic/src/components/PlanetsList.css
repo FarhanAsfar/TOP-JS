@@ -1,0 +1,57 @@
+/* Planets.css */
+
+/* General styles for the planets container */
+.planets-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  /* Style for each planet card */
+  .planet-card {
+    background-color: #f0f8ff; /* Default background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 16px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    min-width: 150px;
+  }
+  
+  /* Assign different background colors for specific planets */
+  .planet-card.earth {
+    background-color: #00ff00;
+  }
+  
+  .planet-card.mars {
+    background-color: #ff4500;
+  }
+  
+  .planet-card.mercury {
+    background-color: #d3d3d3;
+  }
+  
+  .planet-card.jupiter {
+    background-color: #ffd700;
+  }
+  
+  .planet-card.venus {
+    background-color: #ff69b4;
+  }
+  
+  .planet-card.uranus {
+    background-color: #afeeee;
+  }
+  
+  .planet-card.saturn {
+    background-color: #f5deb3;
+  }
+  
+  .planet-card.neptune {
+    background-color: #4169e1;
+  }
+  

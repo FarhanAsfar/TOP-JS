@@ -1,16 +1,11 @@
 import '../components/Planets.css';
 
-function Planets({ planets }) {
+function Planets() {
     return (
-        <div className="planets-container">
-            {planets.map((planet, index) => (
-                <div
-                    key={index}
-                    className={`planet-card ${planet.toLowerCase()}`}
-                >
-                    {planet}
-                </div>
-            ))}
+        <div className="big-card-container">
+            <div className="big-card">
+                <h1 className="big-card-title">PLANETS</h1>
+            </div>
         </div>
     );
 }

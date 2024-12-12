@@ -1,5 +1,5 @@
 import Planets from "./components/Planets";
-// import PlanetsList from "./components/PlanetsList";
+import PlanetsList from "./components/PlanetsList";
 // import PlanetsDetail from "./components/PlanetsDetail";
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
   return (
     <>
       <div>
-        <Planets planets={planets}/>
+        <Planets />
+        <PlanetsList planets={planets}/>
       </div>
     </>
   )
