@@ -63,7 +63,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Suspense fallback='Loading'>
+      <Suspense fallback={<div>Loading</div>}>
         <Routes>
           <Route path="/" element={<Planets />} />
           
