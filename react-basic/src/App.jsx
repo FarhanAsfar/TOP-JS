@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Planets from "./components/Planets";
 import PlanetsList from "./components/PlanetsList";
 // import PlanetsDetail from "./components/PlanetsDetail";
@@ -9,10 +10,12 @@ function App() {
 
   return (
     <>
-      <div>
-        <Planets />
-        <PlanetsList planets={planets}/>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Planets />} />
+          <Route path="/planets" element={<PlanetsList planets={planets} />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
