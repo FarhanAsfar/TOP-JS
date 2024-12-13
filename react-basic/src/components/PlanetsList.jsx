@@ -4,16 +4,17 @@ import { useNavigate } from "react-router-dom";
 function PlanetsList({ planets }) {
     const navigate = useNavigate();
 
-    const handleCardClick = () => {
-        navigate('/details')
+    const handleCardClick = (planetId) => {
+        navigate(`/details/${planetId}`)
     }
     
     return (
-        <div className="planets-container" onClick={handleCardClick}>
-            {planets.map((planet, index) => (
+        <div className="planets-container" >
+            {planets.map((planet) => (
                 <div
-                    key={index}
+                    key={planet.id}
                     className={`planet-card ${planet.name.toLowerCase()}`}
+                    onClick={() => handleCardClick(planet.id)}
                 >
                     {planet.name}
                 </div>
