@@ -6,9 +6,9 @@ function PlanetsList({ planets }) {
             {planets.map((planet, index) => (
                 <div
                     key={index}
-                    className={`planet-card ${planet.toLowerCase()}`}
+                    className={`planet-card ${planet.name.toLowerCase()}`}
                 >
-                    {planet}
+                    {planet.name}
                 </div>
             ))}
         </div>

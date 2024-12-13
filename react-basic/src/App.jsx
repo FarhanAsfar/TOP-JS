@@ -4,8 +4,15 @@ import PlanetsList from "./components/PlanetsList";
 // import PlanetsDetail from "./components/PlanetsDetail";
 
 function App() {
-  const planets = ['Earth', 'Mars', 'Mercury', 'Jupiter', 'Venus',
-    'Uranus', 'Saturn', 'Neptune'
+  const planets = [
+    {id:1, name:'Earth'},
+    {id:2, name:'Mars'},
+    {id:3, name:'Mercury'},
+    {id:4, name:'Jupiter'},
+    {id:5, name:'Venus'},
+    {id:6, name:'Uranus'},
+    {id:7, name:'Saturn'},
+    {id:8, name:'Neptune'},
   ];
 
   return (
