@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import "../components/Planets.css";
-import PlanetsList from "./PlanetsList";
 
 function Planets({ planets }) {
   const navigate = useNavigate();
