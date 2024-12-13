@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../components/Planets.css";
 
-function Planets({ planets }) {
+function Planets() {
   const navigate = useNavigate();
 
   const handleCardClick = () => {

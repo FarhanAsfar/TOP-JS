@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Planets from "./components/Planets";
 import PlanetsList from "./components/PlanetsList";
-// import PlanetsDetail from "./components/PlanetsDetail";
+import PlanetsDetail from "./components/PlanetsDetail";
 
 function App() {
   const planets = [
@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Planets />} />
           <Route path="/planets" element={<PlanetsList planets={planets} />} />
+          <Route path="/details/:id" element={<PlanetsDetail planets={planets} />} />
         </Routes>
       </BrowserRouter>
     </>
