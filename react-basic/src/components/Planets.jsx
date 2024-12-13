@@ -11,12 +11,9 @@ function Planets({ planets }) {
 
   return (
     <>
-      <div className="big-card-container">
+      <div className="big-card-container" onClick={handleCardClick}>
         <div className="big-card">
-          <h1 
-            className="big-card-title" 
-            onClick={handleCardClick}
-          >
+          <h1 className="big-card-title">
             PLANETS
           </h1>
         </div>
