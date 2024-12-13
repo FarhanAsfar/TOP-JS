@@ -6,7 +6,6 @@ function PlanetsDetail({ planets }) {
   const { planetId } = useParams();
 
   const planet = planets.find((p) => p.id === parseInt(planetId));
-  console.log(planet);
 
   const navigate = useNavigate();
   const handlePlanetbutton = () => {
