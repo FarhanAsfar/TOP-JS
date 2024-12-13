@@ -1,7 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Planets from "./components/Planets";
-import PlanetsList from "./components/PlanetsList";
-import PlanetsDetail from "./components/PlanetsDetail";
+// import Planets from "./components/Planets";
+// import PlanetsList from "./components/PlanetsList";
+// import PlanetsDetail from "./components/PlanetsDetail";
+
+import { lazy, Suspense } from 'react';
+const Planets = lazy(() => import('./components/Planets'));
+const PlanetsList = lazy(() => import('./components/PlanetsList'));
+const PlanetsDetail = lazy(() => import('./components/PlanetsDetail'));
 
 function App() {
   const planets = [
@@ -58,11 +63,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Suspense fallback='Loading'>
         <Routes>
           <Route path="/" element={<Planets />} />
+          
           <Route path="/planets" element={<PlanetsList planets={planets} />} />
+
+          
           <Route path="/details/:planetId" element={<PlanetsDetail planets={planets} />} />
+
         </Routes>
+      </Suspense>
       </BrowserRouter>
     </>
   )
