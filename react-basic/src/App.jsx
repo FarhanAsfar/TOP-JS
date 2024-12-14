@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Planets from "./components/Planets";
 // import PlanetsList from "./components/PlanetsList";
 // import PlanetsDetail from "./components/PlanetsDetail";
+import Form from "./components/Form";
 
 import { lazy, Suspense } from 'react';
 const Planets = lazy(() => import('./components/Planets'));
@@ -75,6 +76,7 @@ function App() {
         </Routes>
       </Suspense>
       </BrowserRouter>
+      <Form />
     </>
   )
 }
