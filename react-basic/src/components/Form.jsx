@@ -6,7 +6,7 @@ export default class Form extends React.Component {
             <>
                 <div>
                     <form>
-                        <input type="text" placeholder="Enter Name" value=""/>
+                        <input type="text" placeholder="Enter Name"/>
                     </form>
                 </div>
             </>   
