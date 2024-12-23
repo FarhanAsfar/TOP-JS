@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');  
 const URL = require('./models/url');
 const path = require('path');
+
 const { connectMongoDB } = require('./connection');
 const {restrictToLoggedinUser} = require("./middleware/auth");
 
@@ -11,7 +12,7 @@ const PORT = 8000;
 
 
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));//support form data
+app.use(express.urlencoded({extended:false}));//to support form data
 app.use(cookieParser());
 
 const urlRoute = require('./routes/url');
@@ -29,12 +30,6 @@ app.set('views', path.resolve("./views"));
 app.use('/', staticRoute);
 app.use('/user', userRoute);
 
-app.get('/test', async (req, res)=>{
-    const urls = await URL.find({});
-    return res.render('home', {
-        urls: urls,
-    });
-})
 
 app.use('/url', restrictToLoggedinUser, urlRoute);
 
