@@ -69,14 +69,14 @@ function App() {
           <Route path="/" element={<Planets />} />
           
           <Route path="/planets" element={<PlanetsList planets={planets} />} />
-
           
           <Route path="/details/:planetId" element={<PlanetsDetail planets={planets} />} />
+
+          <Route path="/form" element={<Form />} />
 
         </Routes>
       </Suspense>
       </BrowserRouter>
-      <Form />
     </>
   )
 }
