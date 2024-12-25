@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "../components/PlanetsList.css";
 import { useNavigate } from "react-router-dom";
+import "../components/PlanetsList.css";
 
 function PlanetsList({ planets }) {
     const navigate = useNavigate();

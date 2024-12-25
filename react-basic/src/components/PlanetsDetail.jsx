@@ -12,7 +12,7 @@ function PlanetsDetail({ planets }) {
     navigate(`/planets`);
   }
   const handleHomebutton = ()=>{
-    navigate(`/`);
+    navigate(`/home`);
   }
   
   return (

@@ -66,7 +66,7 @@ function App() {
       <BrowserRouter>
       <Suspense fallback={<div>Loading</div>}>
         <Routes>
-          <Route path="/" element={<Planets />} />
+          <Route path="/home" element={<Planets />} />
           
           <Route path="/planets" element={<PlanetsList planets={planets} />} />
           

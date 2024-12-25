@@ -15,6 +15,7 @@ function Form(){
     function handleSubmit(event){
         event.preventDefault();
         console.log(userInput);
+        // alert(Object.entries(userInput));
         alert(JSON.stringify(userInput));
     }
 
@@ -52,6 +53,7 @@ function Form(){
 
                 <button type="submit">Submit</button>
             </form>
+
         </>
     )
 }
