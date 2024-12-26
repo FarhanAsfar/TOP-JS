@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-function Form(){
-    const [userInput, setUserInput] = useState({});
+function Form() {
+  const [userInput, setUserInput] = useState({});
 
-    function handleChange(event){
-        const {name, value} = event.target;
+  function handleChange(event) {
+    const { name, value } = event.target;
 
-        setUserInput(values => ({
-            ...values,
-            [name]:value
-        }));
-    } 
+    setUserInput((values) => ({
+      ...values,
+      [name]: value,
+    }));
+  }
 
     function handleSubmit(event){
         event.preventDefault();
