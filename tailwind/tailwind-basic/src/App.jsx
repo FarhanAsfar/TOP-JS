@@ -1,3 +1,4 @@
+import { RevenueCard } from "./components/RevenueCard"
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
         <div className="bg-green-400">venuus</div>
         <div className="bg-blue-300">mercury</div> 
       </div>
+
+      <RevenueCard />
     </>
   )
 }
