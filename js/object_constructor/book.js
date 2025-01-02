@@ -11,7 +11,7 @@ function Book(title, author, pages, read){
 
 }
 
-Book.prototype.rating = '4.4';
+Book.prototype.rating = '4.4'; //book1 will also have access to the property 'rating'.
 
 const book1 = new Book('The Hobbit', 'J.R.R', '249', 'read');
 
