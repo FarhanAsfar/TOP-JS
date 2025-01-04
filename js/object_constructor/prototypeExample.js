@@ -23,6 +23,6 @@ const student2 = new Student('alice', 'eee');
 console.log(student1.info());
 console.log(student2.info());
 
-// student1.info !== student2.info //without prototype
+console.log(student1.info !== student2.info) //without prototype
 
 // student1.info === student2.info //with prototype
