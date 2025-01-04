@@ -25,4 +25,4 @@ console.log(student2.info());
 
 console.log(student1.info !== student2.info) //without prototype
 
-// student1.info === student2.info //with prototype
+console.log(student1.info === student2.info) //with prototype
