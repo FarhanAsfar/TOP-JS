@@ -2,12 +2,31 @@ import React from "react";
 import { useFormik } from "formik";
 
 const SignupForm = () => {
+    const validate = values => {
+        const errors = {};
+    
+        if(!values.firstName){
+            errors.firstName = "Required";
+        }else if(values.firstName.length>10){
+            errors.firstName = "Must be 10 characters or less";
+        }
+
+        if(!values.lastName){
+            errors.lastName = "Required";
+        }else if(values.lastName.length>10){
+            errors.lastName = "Must be 10 characters or less";
+        }
+
+        return errors;
+    }
+    
   const formik = useFormik({
     initialValues: {
         firstName: "",
         lastName: "",
         email: "",
     },
+    validate,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
@@ -24,6 +43,9 @@ const SignupForm = () => {
           onChange={formik.handleChange}
           value={formik.values.firstName}
         ></input>
+        {formik.errors.firstName ? <div>
+            {formik.errors.firstName}
+        </div> : null}
 
         <label htmlFor="email">Last Name: </label>
         <input
@@ -33,6 +55,10 @@ const SignupForm = () => {
           onChange={formik.handleChange}
           value={formik.values.lastName}
         ></input>
+
+        {formik.errors.lastName ? <div>
+            {formik.errors.lastName}
+        </div> : null}
 
         <label htmlFor="email">Email Address</label>
         <input
