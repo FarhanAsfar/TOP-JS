@@ -1,13 +1,24 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 8000;
 
 const userRouter = require('./routes/user');
+const exp = require('constants');
+
+mongoose.connect('mongodb://localhost:27017/blog').then(e =>
+    console.log('mongodb connected')
+);
+
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve("./views"));
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
     res.render('home');
