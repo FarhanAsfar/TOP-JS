@@ -11,20 +11,25 @@
     <%- include('./partials/nav') %>
 
     <div class="container mt-3">
-        <form>
+        <form action="/blog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Image</label>
+                <input type="file" class="form-control" id="coverImage" aria-describedby="coverImage" name="coverImage">
+            </div>
+            
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" aria-describedby="title" name="title">
             </div>
-        </form>
-    </div>
 
-    <div class="container mt-3">
-        <form>
             <div class="mb-3">
                 <label for="body">Body</label>
                 <textarea 
-                class="form-control" placeholder="Write your thoughts" id="body"></textarea>
+                class="form-control" placeholder="Write your thoughts" id="body" name="body"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary">Post</button>
             </div>
         </form>
     </div>
