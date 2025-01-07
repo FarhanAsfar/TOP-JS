@@ -52,7 +52,7 @@ userSchema.static('matchPassword', async function(email, password){
     const salt = user.salt;
     const hashedPassword = user.password;
 
-    const userProvidedHash = createHmac('sha256', salt).update(user.password).digest('hex');
+    const userProvidedHash = createHmac('sha256', salt).update(password).digest('hex');
 
     if(hashedPassword !== userProvidedHash){
         throw new Error("Password does not match!")
