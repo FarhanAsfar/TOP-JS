@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser')
+const { checkCookie } = require('./middleware/auth');
 
 const app = express();
 const PORT = 8000;
 
 const userRouter = require('./routes/user');
-const { checkCookie } = require('./middleware/auth');
+const blogRouter = require('./routes/blog');
+
 
 mongoose.connect('mongodb://localhost:27017/blog').then(e =>
     console.log('mongodb connected')
@@ -29,10 +31,8 @@ app.get('/', (req, res) => {
     });
 });
 
-
-
-
 app.use('/user', userRouter);
+app.use('/user', blogRouter);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on Port: ${PORT}`);
