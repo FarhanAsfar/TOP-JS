@@ -57,7 +57,7 @@ userSchema.static('matchPassword', async function(email, password){
         throw new Error("Password does not match!")
     }
 
-    return {...user, password: undefined, salt: undefined};
+    return user;
 })
 
 const User = model('user', userSchema);
