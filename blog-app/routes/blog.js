@@ -3,12 +3,15 @@ const multer = require('multer');
 const router = Router();
 const path = require('path')
 
+const resolvePath = path.resolve('./public/upload');
+console.log(resolvePath);
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.resolve(`./public/upload/`))
+      cb(null, path.resolve(`./public/upload`))
     },
     filename: function (req, file, cb) {
-      const fileName = `${Date.now()}-${file.originalName}`
+      const fileName = `${Date.now()}-${file.originalname}`;
       cb(null, fileName);
     }
   })
@@ -23,6 +26,7 @@ router.get('/add-new', (req,res)=>{
 
 
 router.post('/', upload.single('coverImage'), (req,res)=>{
+    console.log(req.file);
     return res.redirect('/');
 })
 
