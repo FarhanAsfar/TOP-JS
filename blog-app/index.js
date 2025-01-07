@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/user', userRouter);
-app.use('/user', blogRouter);
+app.use('/blog', blogRouter);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on Port: ${PORT}`);

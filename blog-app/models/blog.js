@@ -1,4 +1,4 @@
-const { Schem, model, Schema } = require('mongoose');
+const { Schema, model, Schema } = require('mongoose');
 
 const blogSchema = new Schema({
     title: {
@@ -12,7 +12,7 @@ const blogSchema = new Schema({
         type: String,
     },
     createdBy: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'user',
     },
 }, {timestamps: true});
