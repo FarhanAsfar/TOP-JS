@@ -10,6 +10,8 @@ const PORT = 8000;
 const userRouter = require('./routes/user');
 const blogRouter = require('./routes/blog');
 
+const Blog = require('./models/blog');
+
 
 mongoose.connect('mongodb://localhost:27017/blog').then(e =>
     console.log('mongodb connected')
@@ -25,9 +27,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(checkCookie('token'));
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+    const allBlogs = await Blog.find({});
     res.render('home', {
         user: req.user,
+        blogs: allBlogs,
     });
 });
 
