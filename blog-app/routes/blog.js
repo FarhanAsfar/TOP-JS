@@ -24,7 +24,7 @@ router.get('/add-new', (req,res)=>{
 });
 
 
-router.post('/add-new', upload.single('coverImage'), (req,res)=>{
+router.post('/', upload.single('coverImage'), (req,res)=>{
     console.log(req.file);
     return res.redirect('/');
 })
