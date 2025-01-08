@@ -26,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(checkCookie('token'));
+app.use(express.static(path.resolve('./public')));//to display the images in public folder.
 
 app.get('/', async(req, res) => {
     const allBlogs = await Blog.find({});
