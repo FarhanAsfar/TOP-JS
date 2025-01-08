@@ -13,10 +13,9 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
       const fileName = `${Date.now()}-${file.originalname}`;
       cb(null, fileName);
-    }
+    },
   })
-  
-  const upload = multer({ storage: storage })
+  const upload = multer({ storage: storage });
 
 router.get('/add-new', (req,res)=>{
     return res.render('addBlog', {
@@ -25,7 +24,7 @@ router.get('/add-new', (req,res)=>{
 });
 
 
-router.post('/', upload.single('coverImage'), (req,res)=>{
+router.post('/add-new', upload.single('coverImage'), (req,res)=>{
     console.log(req.file);
     return res.redirect('/');
 })
