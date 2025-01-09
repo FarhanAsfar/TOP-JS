@@ -13,6 +13,20 @@
         <pre mt-3><%= blog.body %></pre>
     </div>
 
+    <div class="container mt-3">
+        <h1>Comments</h1>
+        <form action="/user/signin" method="post">
+            
+            <div class="mb-3">
+              <input type="text" class="form-control" name="content" placeholder="Enter your comment">
+            </div>
+
+            <div>
+                <button class="btn btn-sm btn-primary" type="submit">Comment</button>
+            </div>
+        </form>
+    </div>
+
     <%- include('./partials/scripts') %>
 </body>
 </html>
