@@ -6,6 +6,7 @@ import { ApiResponse } from "../utils/ApiResponse.js"
 
 const registerUser = asyncHandler(async (req, res) => {
     const {username, fullName, email, password} = req.body;
+    console.log(fullName)
 
     if([fullName, email, username, password].some((field) => field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
@@ -23,15 +24,15 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     const avatarLocalPath = req.files?.avatar?.[0]?.path;
-    console.log(avatarLocalPath)
+    // console.log(avatarLocalPath)
     const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
-    console.log(coverImageLocalPath)
+    // console.log(coverImageLocalPath)
 
     if(!avatarLocalPath){
         throw new ApiError(400, "Avatar file is required")
     }
-    console.log(req.files);
-    console.log(req.body)
+    // console.log(req.files);
+    // console.log(req.body)
 
     const avatar = await uploadOnCloudinary(avatarLocalPath)
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
