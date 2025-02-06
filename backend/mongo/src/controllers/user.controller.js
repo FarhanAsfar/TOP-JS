@@ -1,12 +1,13 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js"
+import { ApiResponse } from "../utils/ApiResponse.js"
+
 import { User } from "../models/user.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js"
-import { ApiResponse } from "../utils/ApiResponse.js"
 
 const registerUser = asyncHandler(async (req, res) => {
     const {username, fullName, email, password} = req.body;
-    console.log(fullName)
+    // console.log(username, fullName)
 
     if([fullName, email, username, password].some((field) => field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
@@ -45,7 +46,7 @@ const registerUser = asyncHandler(async (req, res) => {
         fullName,
         avatar: avatar.url,
         coverImage: coverImage?.url || "",
-        username: username.toLowerCase(),
+        username: username?.toString().toLowerCase(),
         email,
         password,
     });
@@ -53,6 +54,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const createdUser = await User.findById(user._id).select(
         "-password -refreshToken"
     );
+    console.log(createdUser);
 
     if(!createdUser){
         throw new ApiError(500, "User registration failed");
