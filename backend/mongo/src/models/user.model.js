@@ -55,8 +55,11 @@ userSchema.pre('save', async function(next){
       next()
 });
 
-userSchema.methods.isPassword = async function(passowrd){
-    return await bcryptjs.compare(passowrd, this.passowrd);
+userSchema.methods.isPassword = async function(password){
+    if(!password || !this.password){
+        console.log("can't compare password")
+    }
+    return await bcryptjs.compare(password, this.password);
 }
 
 userSchema.methods.generateAccessToken = function(){
