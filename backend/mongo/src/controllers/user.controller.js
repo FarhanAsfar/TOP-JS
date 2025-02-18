@@ -217,17 +217,18 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
 })
 
 const getCurrentUser = asyncHandler(async (req, res) => {
-    // return res.status(200)
-    // .json(200, req.user, "Fetched current user")
-    const user = await User.find({});
-    // console.log(user)
+    return res.status(200)
+    .json(200, req.user, "Fetched current user")
 
-    res.status(200).json({
-        user: user.map(user => ({
-            fullName: user.fullName,
-            email: user.email,
-        }))
-    })
+
+    //to get all users
+    // const user = await User.find({});
+    // res.status(200).json({
+    //     user: user.map(user => ({
+    //         fullName: user.fullName,
+    //         email: user.email,
+    //     }))
+    // })
 })
 
 const updateAccount = asyncHandler(async (req, res) => {
