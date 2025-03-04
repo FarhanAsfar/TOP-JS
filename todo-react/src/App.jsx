@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -20,7 +18,7 @@ function App() {
 
       {
         todo.map(function(todo){
-          return <Todo title={todo.title} description={todo.description}></Todo>
+          return <Todo key={todo.title} title={todo.title} description={todo.description}></Todo>
         })
       }
     </div>
