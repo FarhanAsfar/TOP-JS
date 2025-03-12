@@ -13,11 +13,12 @@ const pg_1 = require("pg");
 function getUser(email) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = new pg_1.Client({
-            host: 'localhost',
-            port: 5432,
-            database: 'postgres',
-            user: 'postgres',
-            password: 'farhan21',
+            connectionString: "postgresql://neondb_owner:npg_nPblzR4SIAU8@ep-black-leaf-a8wfaxro-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
+            // host: 'localhost',
+            // port: 5432,
+            // database: 'postgres',
+            // user: 'postgres',
+            // password: 'farhan21',
         });
         yield client.connect();
         const query = "SELECT * FROM students WHERE email=$1";

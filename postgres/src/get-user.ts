@@ -2,11 +2,12 @@ import { Client } from "pg";
 
 async function getUser(email: string){
     const client = new Client({
-        host: 'localhost',
-        port: 5432,
-        database: 'postgres',
-        user: 'postgres',
-        password: 'farhan21',
+        connectionString: "postgresql://neondb_owner:npg_nPblzR4SIAU8@ep-black-leaf-a8wfaxro-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
+        // host: 'localhost',
+        // port: 5432,
+        // database: 'postgres',
+        // user: 'postgres',
+        // password: 'farhan21',
     });
 
     await client.connect();
