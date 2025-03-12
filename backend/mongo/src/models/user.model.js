@@ -57,7 +57,7 @@ userSchema.pre('save', async function(next){
 
 userSchema.methods.isPassword = async function(password){
     if(!password || !this.password){
-        console.log("can't compare password")
+        console.log("Invalid password")
     }
     return await bcryptjs.compare(password, this.password);
 }
