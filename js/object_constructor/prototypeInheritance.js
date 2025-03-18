@@ -15,7 +15,7 @@ Player.prototype.getMarker = function(){
     console.log(`My marker is ${this.marker}`);
 }
 
-Object.getPrototypeOf(Player.prototype);
+console.log(Object.getPrototypeOf(Player.prototype));
 
 Object.setPrototypeOf(Player.prototype, Person.prototype);
 
