@@ -63,6 +63,7 @@ userSchema.methods.isPassword = async function(password){
 }
 
 userSchema.methods.generateAccessToken = function(){
+    //recommended to only sign the user id
     return jwt.sign(
         {
             _id: this._id,
