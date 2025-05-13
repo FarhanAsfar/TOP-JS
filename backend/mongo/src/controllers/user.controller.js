@@ -216,8 +216,10 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
 })
 
 const getCurrentUser = asyncHandler(async (req, res) => {
+    const user = req.user; //set req.user=user in 'auth' middleware
+
     return res.status(200)
-    .json(200, req.user, "Fetched current user")
+    .json(new ApiResponse(200, {user}, "Fetched current user"))
 
 
     //to get all users
