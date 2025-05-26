@@ -13,11 +13,13 @@ app.use(cookieParser());
 
 //import routes
 import userRouter from "./src/routes/user.routes.js"
+import { errorHandler } from "./src/middlewares/error.middleware.js";
 
 
 
 //routes decalaration
 app.use("/api/v1/users", userRouter);
 
+app.use(errorHandler)
 
 export {app};
