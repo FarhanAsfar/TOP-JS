@@ -20,6 +20,6 @@ import { errorHandler } from "./src/middlewares/error.middleware.js";
 //routes decalaration
 app.use("/api/v1/users", userRouter);
 
-app.use(errorHandler)
+app.use(errorHandler) //middleware to handle error response
 
 export {app};
