@@ -7,6 +7,9 @@ if (!fs.existsSync(tempDir)) {
     fs.mkdirSync(tempDir, { recursive: true });
 }
 
+//Add file validation and file size limit
+//clear public/temp automatically
+
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
         cb(null, tempDir)
@@ -16,5 +19,10 @@ const storage = multer.diskStorage({
     }
 })
 
-export const upload = multer({storage});
+const upload = multer({
+    storage,
+    limits: {fileSize: 5*1024*1024} //5MB limit
+});
+
+export { upload };
 
