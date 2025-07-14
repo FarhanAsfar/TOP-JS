@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { publishVideo, getAllVideos, getVideoById, deleteVideo} from "../controllers/video.controller.js";
 
 const router = Router();
-
 
 router.route("/publish-video").post(
     upload.fields([
