@@ -13,4 +13,6 @@ commentRouter.route("/edit-comment/:id").put(verifyJWT, editComment);
 
 
 
-export {commentRouter};
+export {
+    commentRouter,
+};
