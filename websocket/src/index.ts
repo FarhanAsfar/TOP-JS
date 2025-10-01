@@ -1,0 +1,56 @@
+//Using native node.js (without express)
+import WebSocket, {WebSocketServer} from "ws";
+import http from "http";
+
+//creating a http server
+const server = http.createServer(function(request: any, response: any){
+    console.log((new Date()) + " Received request for "+ request.url);
+    response.end("Hello");
+});
+
+//creating a websocket server
+const wss = new WebSocketServer({server});
+
+//WebSocket server
+let userCount = 0;
+wss.on('connection', function connection(ws){
+    ws.on('error', console.error);
+
+    ws.on('message', function message(data, isBinary){
+        wss.clients.forEach(function each(client){
+            if(client.readyState === WebSocket.OPEN){
+                client.send(data, {binary: isBinary});
+            }
+        });
+    });
+    console.log("User connected ", ++userCount);
+    ws.send("Hello, this message is from the server");
+});
+
+server.listen(8080, function() {
+    console.log((new Date()) + 'Server is listening on port 8080');
+});
+
+//---------------------------------------------------------------------------------
+ 
+//Using express
+// import express from 'express';
+// import { WebSocketServer } from "ws";
+
+// const app = express();
+// const httpServer = app.listen(8080);
+
+// const wss = new WebSocketServer({server: httpServer});
+
+// wss.on('connection', function connection(ws){
+//     ws.on('error', console.error);
+
+//     ws.on('message', function message(data, isBinary){
+//         wss.clients.forEach(function eacht(client){
+//             if(client.readyState === WebSocket.OPEN){
+//                 client.send(data, {binary: isBinary});
+//             }
+//         });
+//     });
+//     ws.send("Hello from the server");
+// });
